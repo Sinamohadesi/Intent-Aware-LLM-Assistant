@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Technical University of Munich",
+        "country": "Germany",
+        "field": "Artificial Intelligence",
+        "degree": "Master",
+        "ielts": 6.5,
+        "tuition": "Low tuition / semester fee",
+        "ranking": "Top",
+        "keywords": [
+            "AI",
+            "Machine Learning",
+            "Computer Science"
+        ]
+    },
+    {
+        "name": "University of Stuttgart",
+        "country": "Germany",
+        "field": "Artificial Intelligence",
+        "degree": "Master",
+        "ielts": 6.5,
+        "tuition": "Low tuition / semester fee",
+        "ranking": "Top",
+        "keywords": [
+            "AI",
+            "Computer Science",
+            "Autonomous Systems"
+        ]
+    },
+    {
+        "name": "Saarland University",
+        "country": "Germany",
+        "field": "Artificial Intelligence",
+        "degree": "Master",
+        "ielts": 6.5,
+        "tuition": "No tuition fee",
+        "ranking": "Strong Research",
+        "keywords": [
+            "AI",
+            "Machine Learning",
+            "Computer Vision"
+        ]
+    }
+]

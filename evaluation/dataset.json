@@ -1,0 +1,109 @@
+[
+  {
+    "input": "Help me choose a university",
+    "expected_intent": "recommendation",
+    "expected_missing": [
+      "country",
+      "field",
+      "requirements"
+    ]
+  },
+  {
+    "input": "I want to study in Germany",
+    "expected_intent": "recommendation",
+    "expected_missing": [
+      "field",
+      "requirements"
+    ]
+  },
+  {
+    "input": "I want to study Artificial Intelligence",
+    "expected_intent": "recommendation",
+    "expected_missing": [
+      "country",
+      "requirements"
+    ]
+  },
+  {
+    "input": "Germany and Artificial Intelligence",
+    "expected_intent": "recommendation",
+    "expected_missing": [
+      "requirements"
+    ]
+  },
+  {
+    "input": "No tuition preference, IELTS 6.5, top universities",
+    "expected_intent": "recommendation",
+    "expected_missing": [
+      "country",
+      "field"
+    ]
+  },
+  {
+    "input": "I want to study Artificial Intelligence in Germany",
+    "expected_intent": "recommendation",
+    "expected_missing": [
+      "requirements"
+    ]
+  },
+  {
+    "input": "Recommend universities in Germany for Artificial Intelligence with low tuition",
+    "expected_intent": "recommendation",
+    "expected_missing": []
+  },
+  {
+    "input": "I am looking for top universities in Italy for Computer Science",
+    "expected_intent": "recommendation",
+    "expected_missing": []
+  },
+  {
+    "input": "I want universities in the Netherlands for Data Science and my IELTS score is 6.5",
+    "expected_intent": "recommendation",
+    "expected_missing": []
+  },
+  {
+    "input": "Which universities should I apply to in France?",
+    "expected_intent": "recommendation",
+    "expected_missing": [
+      "field",
+      "requirements"
+    ]
+  },
+  {
+    "input": "I want a master's program in Machine Learning",
+    "expected_intent": "recommendation",
+    "expected_missing": [
+      "country",
+      "requirements"
+    ]
+  },
+  {
+    "input": "My preferred country is Germany and I want low tuition",
+    "expected_intent": "recommendation",
+    "expected_missing": [
+      "field"
+    ]
+  },
+  {
+    "input": "I prefer highly ranked universities and my IELTS score is 7.0",
+    "expected_intent": "recommendation",
+    "expected_missing": [
+      "country",
+      "field"
+    ]
+  },
+  {
+    "input": "Find me AI universities in Belgium with affordable tuition",
+    "expected_intent": "recommendation",
+    "expected_missing": []
+  },
+  {
+    "input": "Recommend a university for me",
+    "expected_intent": "recommendation",
+    "expected_missing": [
+      "country",
+      "field",
+      "requirements"
+    ]
+  }
+]

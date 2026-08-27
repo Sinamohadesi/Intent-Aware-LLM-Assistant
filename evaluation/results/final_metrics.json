@@ -1,0 +1,195 @@
+{
+    "single_turn": {
+        "dataset_samples": 15,
+        "successfully_evaluated": 15,
+        "failed_samples": 0,
+        "intent_accuracy": 100.0,
+        "missing_precision": 91.3,
+        "missing_recall": 100.0,
+        "missing_f1": 95.45,
+        "missing_exact_match": 86.67
+    },
+    "multi_turn": {
+        "total_conversations": 4,
+        "total_turns": 10,
+        "missing_information_accuracy": 100.0,
+        "clarification_decision_accuracy": 100.0,
+        "complete_conversation_accuracy": 100.0
+    },
+    "direct_answer_baseline": {
+        "dataset_samples": 15,
+        "successfully_evaluated": 15,
+        "failed_samples": 0,
+        "intent_accuracy": 100.0,
+        "missing_precision": 91.3,
+        "missing_recall": 100.0,
+        "missing_f1": 95.45,
+        "missing_exact_match": 86.67,
+        "direct_answer_rate": 100.0,
+        "incomplete_prompt_direct_answer_rate": 100.0,
+        "clarification_attempt_rate": 0.0
+    },
+    "comparative_evaluation": {
+        "total_conversations": 4,
+        "total_turns": 10,
+        "continuation_turns": 6,
+        "clarification_required_turns": 6,
+        "complete_input_turns": 4,
+        "missing_information_accuracy": {
+            "adaptive": 100.0,
+            "baseline": 50.0,
+            "difference_pp": 50.0
+        },
+        "clarification_decision_accuracy": {
+            "adaptive": 100.0,
+            "baseline": 40.0,
+            "difference_pp": 60.0
+        },
+        "complete_conversation_accuracy": {
+            "adaptive": 100.0,
+            "baseline": 25.0,
+            "difference_pp": 75.0
+        },
+        "continuation_turn_state_accuracy": {
+            "adaptive": 100.0,
+            "baseline": 16.67,
+            "difference_pp": 83.33
+        },
+        "premature_direct_answer_rate": {
+            "adaptive": 0.0,
+            "baseline": 100.0
+        },
+        "complete_input_handling_accuracy": {
+            "adaptive": 100.0,
+            "baseline": 100.0
+        },
+        "failed_baseline_calls": 0
+    },
+    "robustness": {
+        "total_conversations": 10,
+        "total_turns": 26,
+        "continuation_turns": 16,
+        "failed_turns": 0,
+        "overall": {
+            "missing_information_accuracy": 96.15,
+            "clarification_decision_accuracy": 96.15,
+            "complete_conversation_accuracy": 90.0,
+            "continuation_turn_state_accuracy": 93.75
+        },
+        "categories": {
+            "paraphrase": {
+                "missing_accuracy": 100.0,
+                "clarification_accuracy": 100.0
+            },
+            "informal": {
+                "missing_accuracy": 100.0,
+                "clarification_accuracy": 100.0
+            },
+            "typo": {
+                "missing_accuracy": 100.0,
+                "clarification_accuracy": 100.0
+            },
+            "irrelevant_context": {
+                "missing_accuracy": 100.0,
+                "clarification_accuracy": 100.0
+            },
+            "reordered": {
+                "missing_accuracy": 100.0,
+                "clarification_accuracy": 100.0
+            },
+            "fragmented": {
+                "missing_accuracy": 100.0,
+                "clarification_accuracy": 100.0
+            },
+            "complete_input": {
+                "missing_accuracy": 100.0,
+                "clarification_accuracy": 100.0
+            },
+            "research_interest": {
+                "missing_accuracy": 100.0,
+                "clarification_accuracy": 100.0
+            },
+            "short_fragments": {
+                "missing_accuracy": 100.0,
+                "clarification_accuracy": 100.0
+            },
+            "long_form": {
+                "missing_accuracy": 50.0,
+                "clarification_accuracy": 50.0
+            }
+        }
+    },
+    "ablation_no_state": {
+        "total_conversations": 4,
+        "total_turns": 10,
+        "first_turns": 4,
+        "continuation_turns": 6,
+        "failed_turns": 0,
+        "overall_missing_information_accuracy": {
+            "full_system": 100.0,
+            "no_state": 50.0,
+            "change_pp": -50.0
+        },
+        "overall_clarification_decision_accuracy": {
+            "full_system": 100.0,
+            "no_state": 70.0,
+            "change_pp": -30.0
+        },
+        "complete_conversation_accuracy": {
+            "full_system": 100.0,
+            "no_state": 25.0,
+            "change_pp": -75.0
+        },
+        "first_turn_missing_accuracy": 100.0,
+        "first_turn_clarification_accuracy": 100.0,
+        "continuation_turn_missing_accuracy": {
+            "full_system": 100.0,
+            "no_state": 16.67,
+            "change_pp": -83.33
+        },
+        "continuation_turn_clarification_accuracy": 50.0
+    },
+    "ablation_no_clarification": {
+        "total_conversations": 4,
+        "total_turns": 10,
+        "continuation_turns": 6,
+        "clarification_required_turns": 6,
+        "complete_input_turns": 4,
+        "failed_turns": 0,
+        "missing_information_accuracy": {
+            "full_system": 100.0,
+            "no_clarification": 100.0,
+            "change_pp": 0.0
+        },
+        "clarification_decision_accuracy": {
+            "full_system": 100.0,
+            "no_clarification": 40.0,
+            "change_pp": -60.0
+        },
+        "complete_conversation_accuracy": {
+            "full_system": 100.0,
+            "no_clarification": 25.0,
+            "change_pp": -75.0
+        },
+        "premature_direct_answer_rate": {
+            "full_system": 0.0,
+            "no_clarification": 100.0,
+            "change_pp": 100.0
+        },
+        "complete_input_handling_accuracy": {
+            "full_system": 100.0,
+            "no_clarification": 100.0,
+            "change_pp": 0.0
+        },
+        "continuation_turn_state_accuracy": {
+            "full_system": 100.0,
+            "no_clarification": 100.0,
+            "change_pp": 0.0
+        }
+    },
+    "ranking_v2": {
+        "TUM": 95.45,
+        "University of Stuttgart": 90.91,
+        "Saarland University": 81.82
+    }
+}
