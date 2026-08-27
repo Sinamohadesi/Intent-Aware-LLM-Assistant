@@ -4,7 +4,7 @@ An intent-aware, clarification-driven LLM assistant for reliable multi-turn univ
 
 The system detects user intent, extracts structured information, identifies missing information, asks targeted clarification questions, maintains short-term conversational state, models user preferences, ranks universities, and preserves conversation history through persistent memory.
 
-The project is designed as both:
+The project is designed as:
 
 * a functional AI application
 * a bachelor-level research and portfolio project
@@ -12,7 +12,7 @@ The project is designed as both:
 
 ---
 
-## Research Motivation
+# Research Motivation
 
 Large Language Models often answer immediately even when a user's request is incomplete, ambiguous, or underspecified.
 
@@ -28,7 +28,7 @@ The central research question is:
 
 ---
 
-## Current Use Case
+# Current Use Case
 
 The current implementation focuses on university recommendation.
 
@@ -74,6 +74,30 @@ interested in machine learning and computer vision
 ```
 
 The assistant then builds a structured user profile and ranks matching universities.
+
+---
+
+# Demo
+
+## Home Interface
+
+![Home Interface](docs/images/01-home.png)
+
+## Adaptive Clarification
+
+![Adaptive Clarification](docs/images/02-clarification.png)
+
+## Multi-Turn State Tracking
+
+![Multi-Turn State Tracking](docs/images/03-multiturn-state.png)
+
+## Personalized Recommendations
+
+![Personalized Recommendations](docs/images/04-recommendations.png)
+
+## Persistent Memory and Session Resume
+
+![Persistent Memory](docs/images/05-memory-resume.png)
 
 ---
 
@@ -281,11 +305,11 @@ Universities are ranked using explicit weighted criteria.
 Current canonical weighting:
 
 ```text
-Country match       20
-Field match         25
-IELTS compatibility 20
-Tuition preference  15
-Ranking preference  20
+Country match        20
+Field match          25
+IELTS compatibility  20
+Tuition preference   15
+Ranking preference   20
 ```
 
 Research-interest alignment is also integrated as a proportional matching signal.
@@ -350,7 +374,7 @@ src/memory.py
 
 Persistent memory uses SQLite.
 
-Database:
+Local database:
 
 ```text
 memory.db
@@ -376,6 +400,8 @@ ConversationMemory
 ```
 
 These components are intentionally kept separate.
+
+`memory.db` is excluded from the Git repository because it contains local conversation data.
 
 ---
 
@@ -449,7 +475,7 @@ The evaluation framework covers:
 
 ---
 
-## 1. Single-Turn Evaluation
+# 1. Single-Turn Evaluation
 
 Run:
 
@@ -472,7 +498,7 @@ Canonical results:
 
 ---
 
-## 2. Multi-Turn Evaluation
+# 2. Multi-Turn Evaluation
 
 Run:
 
@@ -649,8 +675,8 @@ python evaluation/evaluate_ablation_clarification.py
 In this condition:
 
 ```text
-State tracking       ON
-Adaptive clarification OFF
+State tracking          ON
+Adaptive clarification  OFF
 ```
 
 Results:
@@ -695,9 +721,7 @@ The Markdown file contains research-ready result tables and interpretation.
 
 # Main Research Findings
 
-The experiments support several conclusions.
-
-### 1. State tracking matters primarily in multi-turn interaction
+## 1. State tracking matters primarily in multi-turn interaction
 
 Removing state reduced continuation-turn missing-information accuracy:
 
@@ -709,7 +733,7 @@ while first-turn performance remained unchanged.
 
 ---
 
-### 2. Adaptive clarification is behaviorally distinct from extraction
+## 2. Adaptive clarification is behaviorally distinct from extraction
 
 Removing clarification did not reduce structured missing-information accuracy:
 
@@ -731,7 +755,7 @@ and premature direct-answer behavior increased:
 
 ---
 
-### 3. The adaptive system performs better than direct-answer behavior on incomplete requests
+## 3. The adaptive system performs better than direct-answer behavior on incomplete requests
 
 The direct baseline handled complete prompts correctly but performed poorly when requests required additional information.
 
@@ -739,6 +763,7 @@ The largest observed comparison difference was:
 
 ```text
 Continuation-Turn State Accuracy
+
 Adaptive: 100.00%
 Baseline: 16.67%
 Difference: +83.33 percentage points
@@ -746,7 +771,7 @@ Difference: +83.33 percentage points
 
 ---
 
-### 4. Robustness is high but not perfect
+## 4. Robustness is high but not perfect
 
 The system performed reliably across:
 
@@ -776,7 +801,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Current Python dependencies:
+Current Python dependencies include:
 
 ```text
 ollama
@@ -869,6 +894,14 @@ Intent-Aware-LLM-Assistant/
 ├── data/
 │   └── universities.json
 │
+├── docs/
+│   └── images/
+│       ├── 01-home.png
+│       ├── 02-clarification.png
+│       ├── 03-multiturn-state.png
+│       ├── 04-recommendations.png
+│       └── 05-memory-resume.png
+│
 ├── evaluation/
 │   ├── __init__.py
 │   ├── dataset.json
@@ -904,6 +937,17 @@ Intent-Aware-LLM-Assistant/
     └── user_profile.py
 ```
 
+Note:
+
+```text
+.env
+memory.db
+venv/
+__pycache__/
+```
+
+are intentionally excluded from the public Git repository.
+
 ---
 
 # Current Limitations
@@ -927,8 +971,6 @@ The reported metrics should therefore be interpreted as controlled experimental 
 ---
 
 # Future Work
-
-The project can be extended in several research directions.
 
 ## Uncertainty-Aware Clarification
 
